@@ -1,12 +1,14 @@
 # The Challenge
 
-The year is 2092. A budding young vocalist and his band have just enough money to buy a hovercar and begin their tour. They have struck deals with multiple venues and can set their own tour schedule, any venue in any order. Can you build an API to help them find the shortest route to take to hit all cities to maximize their fuel budget?
+The year is 2092. A budding young vocalist and his band have just enough money to buy a hovercar and begin their tour. They have struck deals with multiple venues and can set their own tour schedule, any venue in any order. Can you build an API (server) to help them find the shortest route to take to hit all cities to maximize their fuel budget?
 
-We have provided some test data to begin mapping on the grid. Spend up to 4 hours creating your algorithm and server or application to return the optimal route(s). Fork this repository and make any notes and commentary at the bottom of the readme.
+We have provided some test data. Spend up to 4 hours creating your algorithm and API to return the optimal route(s) for a given set of input points. Fork this repository and make any notes and commentary at the bottom of the readme.
 
 # The Tech
 
-Please use Python to build an API that will return the best route(s) for the points requested from it. Let's assume the first data point is home, the point you originate from and must end at. It is up to you to decide how to accept the request and in what format(s) to return the data. You may use any web application framework you would like, or any other way to provide this service to the band. We want to see the solve and the return/display of the data.
+Please use Python to build an API that will return the best route(s) for the points requested from it. Let's assume the first data point is home, the point you originate from and must end at. It is up to you to decide how to accept the request and in what format(s) to return the data. The goal is build an API - you do not need to build a front-end website to consume it. 
+
+You may use any web application framework you would like, and do not need to worry about deploying it. We want to see the solve and the return of the route(s). Include any important instructions for running the server locally and making the requests. 
 
 We will review the code with you, be prepared to discuss any choices of external libraries. If you use an external library, that's fine, please note it in the readme.md.
 
