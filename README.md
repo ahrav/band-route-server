@@ -27,3 +27,14 @@ Here are some sample sets of data to use:
 # Candidate Notes:
 
 ### Fill in comments, external tool usage, and time tracking
+Additional libraries included are numpy and pandas
+
+Directions to test API:
+1. If pipenv is installed on machine run pipenv install to install dependencies, if no pipenv install pipenv first then run pipenv install.
+2. Run pipenv shell
+3. Run python manage.py runserver
+4. Naviate to http://localhost:8000/api/v1/route
+5. Within Raw Data form input JSON with "cities" key and  list of coordinate objects as values and post ({"cities": [{"x":116,"y":404},{"x":161,"y":617},{"x":16,"y":97},{"x":430,"y":536}]}
+
+Time to Completion:
+3hr 46m 44s
