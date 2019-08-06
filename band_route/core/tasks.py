@@ -146,8 +146,8 @@ def combine_route(route1, route2):
     parent_route1 = []
     parent_route2 = []
 
-    partial_route1 = int(random.random()) * len(route1)
-    partial_route2 = int(random.random()) * len(route2)
+    partial_route1 = int(random.random() * len(route1))
+    partial_route2 = int(random.random() * len(route2))
 
     start_route = min(partial_route1, partial_route2)
     end_route = max(partial_route1, partial_route2)
@@ -210,35 +210,35 @@ def swap_routes(routes, swap_rate):
     return swapped_routes
 
 
-def new_route(curr_route, elite_size, swap_rate):
+def new_route(routes, elite_size, swap_rate):
     """Use earlier functions in order to
        create a new route to visit all points
        create a new generation"""
 
     # Find fit individuals
-    ranked_routes = rank_routes(curr_route)
+    ranked_routes = rank_routes(routes)
     # Potential parents
     selection_results = selection_func(ranked_routes, elite_size)
     # Create mating pool
-    selected_routes = select_routes(curr_route, selection_results)
+    selected_routes = select_routes(routes, selection_results)
     # Breed to create new generation
-    routes = combine_routes(selected_routes, elite_size)
+    combined_routes = combine_routes(selected_routes, elite_size)
     # Apply mutations
-    new_routes = swap_routes(routes, swap_rate)
+    new_routes = swap_routes(combined_routes, swap_rate)
 
     return new_routes
 
 
-def fastest_route(routes, num_routes, elite_size, swap_rate, generations):
+def fastest_route(cities_list, num_routes, elite_size, swap_rate, generations):
     """Function to find fastest route to visit all cities only once"""
 
-    route = create_routes(routes, num_routes)
+    routes = create_routes(cities_list, num_routes)
 
     # Set generation to 50 feel free to change for more route possibilities
     for i in range(0, generations):
-        route = new_route(route, elite_size, swap_rate)
+        routes = new_route(routes, elite_size, swap_rate)
 
-    best_route_index = rank_routes(route)[0][0]
-    best_route = route[best_route_index]
+    best_route_index = rank_routes(routes)[0][0]
+    best_route = routes[best_route_index]
 
     return best_route
